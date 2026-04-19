@@ -44,15 +44,19 @@ todoForm.addEventListener('submit', event => {
 
   const deleteButton = document.createElement('button');
   deleteButton.className = 'delete-button';
-  deleteButton.textContent = 'Delete';
+  deleteButton.textContent = '🗑️';
   deleteButton.type = 'button';
+  deleteButton.title = 'Delete';
 
   textParagraph.addEventListener('click', () => {
     textParagraph.classList.toggle('completed');
   });
 
   deleteButton.addEventListener('click', () => {
-    todoList.removeChild(listItem);
+    listItem.classList.add('removing');
+    listItem.addEventListener('transitionend', () => {
+      todoList.removeChild(listItem);
+    }, { once: true });
   });
 
   listItem.appendChild(textParagraph);
