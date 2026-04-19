@@ -44,6 +44,7 @@ body {
   width: 100%;
   max-width: 480px;
   background: var(--surface);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-radius: 24px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
@@ -119,6 +120,7 @@ h1 {
   border: 1px solid var(--border);
   border-radius: 16px;
   background: var(--card);
+  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   transition: all 0.3s ease;
   opacity: 0;
